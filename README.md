@@ -37,3 +37,6 @@ Runs at **http://localhost:4321**
 ## Deploy
 
 Build output is in `dist/`. Deploy that folder to any static host (e.g. Vercel, Netlify). Set root to this directory and build command: `npm run build`.
+
+---
+*Repo synced via Git.*
