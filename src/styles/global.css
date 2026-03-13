@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* MagmaLink Brand Colours */
+@theme {
+  --color-navy: #0F172A;
+  --color-slate: #475569;
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     BRAND ACCENT — to change the site colour, edit only these two lines.
+     All buttons, links, labels, icons, and focus rings update automatically.
+     Also update --color-accent-subtle and the hero dot-grid rgba below.
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  --color-accent:       #3B82F6;  /* primary accent  (e.g. #F97316 for orange) */
+  --color-accent-hover: #2563EB;  /* hover / pressed  (e.g. #EA580C for orange) */
+
+  /* Tinted card/section background keyed to accent — update alongside above */
+  --color-accent-subtle: #EFF6FF; /* light tint       (e.g. #FFF7ED for orange) */
+
+  --color-amber:    #F59E0B;
+  --color-offwhite: #F8FAFC;
+  --color-white:    #FFFFFF;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-navy);
+  background-color: var(--color-offwhite);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Selection colour */
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}

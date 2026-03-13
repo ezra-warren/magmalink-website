@@ -1,0 +1,527 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { copy } from '../content/copy';
+---
+
+<Layout title={`${copy.siteName} - Outreach. Simplified.`} description={copy.meta.defaultDescription}>
+  <!-- Hero Section - Dark gradient like The Deal Lab / Engineered GTM -->
+  <section class="relative bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] py-20 md:py-28 overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 opacity-10">
+      <!-- dot-grid colour = accent. Update rgba to match --color-accent when rebranding -->
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(59,130,246,0.3) 1px, transparent 0); background-size: 32px 32px;"></div>
+    </div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-accent rounded-full blur-[120px] opacity-20"></div>
+    <div class="absolute bottom-10 left-10 w-96 h-96 bg-[#F59E0B] rounded-full blur-[150px] opacity-10"></div>
+    
+    <div class="relative max-w-6xl mx-auto px-6">
+      <!-- Tools strip -->
+      <div class="flex justify-center mb-10">
+        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-2.5">
+          {copy.hero.tools.map((name, i) => (
+            <>
+              {i > 0 && <span class="text-white/30">•</span>}
+              <span class="text-white/60 text-sm font-medium">{name}</span>
+            </>
+          ))}
+        </div>
+      </div>
+
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-center">
+          <span data-copy-key="hero.headlineLine1">{copy.hero.headlineLine1}</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto text-center">
+          <span data-copy-key="hero.subheadline">{copy.hero.subheadline}</span>
+        </p>
+        
+        <!-- Outcome bullets (stacked vertically) -->
+        <div class="flex flex-col items-center gap-3 mb-10 text-slate-400">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#10B981] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span data-copy-key="hero.bullet1">{copy.hero.bullet1}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#10B981] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span data-copy-key="hero.bullet2">{copy.hero.bullet2}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#10B981] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span data-copy-key="hero.bullet3">{copy.hero.bullet3}</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/contact" 
+            class="inline-flex items-center justify-center bg-accent text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent-hover transition-all hover:scale-105 shadow-lg shadow-accent/25"
+            data-copy-key="hero.ctaPrimary"
+          >
+            {copy.hero.ctaPrimary}
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a 
+            href="#how-we-work" 
+            class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-all border border-white/20"
+            data-copy-key="hero.ctaSecondary"
+          >
+            {copy.hero.ctaSecondary}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <span class="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3" data-copy-key="services.label">{copy.services.label}</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+          <span data-copy-key="services.title">{copy.services.title}</span>
+        </h2>
+        <p class="text-lg text-[#475569] max-w-2xl mx-auto">
+          <span data-copy-key="services.subtitle">{copy.services.subtitle}</span>
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+        {
+          [
+            { key: 'outboundEngine', section: copy.services.outboundEngine, color: '#3B82F6' /* brand accent — match --color-accent in global.css */, icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
+            { key: 'outboundMultiChannel', section: copy.services.outboundMultiChannel, color: '#F59E0B', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' },
+            { key: 'revOpsWorkflow', section: copy.services.revOpsWorkflow, color: '#10B981', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+            { key: 'aiEnablement', section: copy.services.aiEnablement, color: '#8B5CF6', icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' },
+          ].map(({ key, section, color, icon }) => (
+            <div class="group relative p-6 lg:p-8 rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden" style={`background: linear-gradient(135deg, ${color}06, ${color}12);`}>
+              {/* Left border - thickens on hover */}
+              <div class="absolute left-0 top-0 bottom-0 w-1 group-hover:w-1.5 transition-all duration-300" style={`background: ${color};`}></div>
+              {/* Hover overlay */}
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={`background: linear-gradient(135deg, ${color}10, ${color}18);`}></div>
+              
+              <div class="relative z-10">
+                {/* Icon + Title row */}
+                <div class="flex items-center gap-4 mb-5">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 flex-shrink-0" style={`background: linear-gradient(135deg, ${color}, ${color}dd);`}>
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl lg:text-2xl font-bold text-[#0F172A]" data-copy-key={`services.${key}.title`}>{section.title}</h3>
+                </div>
+                {/* Bullets */}
+                <ul class="space-y-3 pl-1">
+                  {section.bullets.map((bullet, i) => (
+                    <li class="flex items-start gap-3">
+                      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style={`color: ${color}`} fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                      <span class="text-[#475569] text-base leading-relaxed" data-copy-key={`services.${key}.bullets.${i}`}>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work - Expandable Accordion -->
+  <section id="how-we-work" class="py-20 bg-gradient-to-b from-offwhite to-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3" data-copy-key="howWeWork.label">{copy.howWeWork.label}</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+          <span data-copy-key="howWeWork.title">{copy.howWeWork.title}</span>
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-4" id="hww-accordion">
+        {
+          [
+            /* 1. Discovery & Strategy - Bold crosshair/target */
+            { color: '#3B82F6' /* brand accent — match --color-accent in global.css */, icon: `<circle cx="12" cy="12" r="8" stroke="white" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3.5" stroke="white" stroke-width="2" fill="white" fill-opacity="0.3"/><line x1="12" y1="1" x2="12" y2="5.5" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="18.5" x2="12" y2="23" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="5.5" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="18.5" y1="12" x2="23" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>` },
+            /* 2. Infrastructure Setup - Bold cog */
+            { color: '#6366F1', icon: `<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke="white" stroke-width="1.5" fill="none" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="white" stroke-width="1.5" fill="white" fill-opacity="0.3"/>` },
+            /* 3. List Building & Enrichment - Three lines converging to bullseye */
+            { color: '#8B5CF6', icon: `<circle cx="19" cy="12" r="3.5" stroke="white" stroke-width="2" fill="white" fill-opacity="0.3"/><circle cx="19" cy="12" r="1" fill="white"/><path d="M2 5h5l6 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12h10" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M2 19h5l6-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="2" cy="5" r="1.5" fill="white"/><circle cx="2" cy="12" r="1.5" fill="white"/><circle cx="2" cy="19" r="1.5" fill="white"/>` },
+            /* 4. Messaging & Campaign Launch - Bold envelope */
+            { color: '#F59E0B', icon: `<rect x="2" y="5" width="20" height="14" rx="2" stroke="white" stroke-width="2" fill="white" fill-opacity="0.15"/><path d="M2 7l10 7 10-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>` },
+            /* 5. Lead Routing & Optimisation - Bold funnel */
+            { color: '#10B981', icon: `<path d="M2 7h20l-7 8v5l-6 3V15L2 7z" stroke="white" stroke-width="2" fill="white" fill-opacity="0.15" stroke-linejoin="round"/><circle cx="6" cy="3" r="1.5" fill="white" opacity="0.8"/><circle cx="12" cy="3" r="1.5" fill="white" opacity="0.8"/><circle cx="18" cy="3" r="1.5" fill="white" opacity="0.8"/>` },
+            /* 6. Iterate & Scale - Bar chart trending up */
+            { color: '#0F172A', icon: `<rect x="3" y="14" width="4" height="7" rx="1" fill="white" opacity="0.5"/><rect x="10" y="10" width="4" height="11" rx="1" fill="white" opacity="0.7"/><rect x="17" y="5" width="4" height="16" rx="1" fill="white"/><line x1="2" y1="22" x2="22" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>` },
+          ].map(({ color, icon }, i) => {
+            const step = copy.howWeWork.steps[i];
+            return (
+              <div
+                class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer hww-tile"
+                style={`background: linear-gradient(135deg, ${color}06, ${color}10); border: 1px solid ${color}20;`}
+                data-hww-index={i}
+              >
+                {/* Left accent bar */}
+                <div class="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 hww-bar" style={`background: ${color};`}></div>
+
+                {/* Header (always visible, clickable) */}
+                <button
+                  class="w-full flex items-center gap-4 p-5 lg:p-6 text-left hww-toggle"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <div
+                    class="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-xl flex-shrink-0 shadow-md"
+                    style={`background: linear-gradient(135deg, ${color}, ${color}cc);`}
+                  >{i + 1}</div>
+                  <h3 class="text-lg lg:text-xl font-bold text-[#0F172A] flex-1" data-copy-key={`howWeWork.steps.${i}.title`}>{step.title}</h3>
+                  {/* Illustration on the collapsed header */}
+                  <div class="hidden md:flex items-center justify-center flex-shrink-0">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300" style={`background: linear-gradient(135deg, ${color}, ${color}dd);`}>
+                      <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" set:html={icon}/>
+                    </div>
+                  </div>
+                  <svg class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 hww-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+
+                {/* Expandable content */}
+                <div class="hww-content overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
+                  <div class="px-5 lg:px-6 pb-6 pl-[4.75rem] pr-5 lg:pr-8">
+                    <ul class="space-y-2 mb-4">
+                      {step.bullets.map((bullet, bi) => (
+                        <li class="flex items-start gap-3">
+                          <svg class="w-4 h-4 flex-shrink-0 mt-1" style={`color: ${color}`} fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                          <span class="text-[#475569] text-base leading-relaxed" data-copy-key={`howWeWork.steps.${i}.bullets.${bi}`}>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div class="flex items-start gap-2 pt-3 border-t border-slate-200/60">
+                      <span class="text-xs font-semibold uppercase tracking-wider flex-shrink-0 mt-0.5" style={`color: ${color};`}>Outcome</span>
+                      <span class="text-[#0F172A] font-medium text-sm leading-relaxed" data-copy-key={`howWeWork.steps.${i}.outcome`}>{step.outcome}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const accordion = document.getElementById('hww-accordion');
+      if (!accordion) return;
+
+      accordion.querySelectorAll('.hww-tile').forEach(tile => {
+        const toggle = tile.querySelector('.hww-toggle');
+        const content = tile.querySelector('.hww-content') as HTMLElement;
+        const chevron = tile.querySelector('.hww-chevron');
+        const bar = tile.querySelector('.hww-bar') as HTMLElement;
+        if (!toggle || !content || !chevron || !bar) return;
+
+        toggle.addEventListener('click', () => {
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+          if (isOpen) {
+            toggle.setAttribute('aria-expanded', 'false');
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+            chevron.classList.remove('rotate-180');
+            bar.style.width = '4px';
+          } else {
+            toggle.setAttribute('aria-expanded', 'true');
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.opacity = '1';
+            chevron.classList.add('rotate-180');
+            bar.style.width = '6px';
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Us vs. Others - Like The Deal Lab / Engineered GTM -->
+  <section id="why-us" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3" data-copy-key="whyUs.label">{copy.whyUs.label}</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0F172A]">
+          <span data-copy-key="whyUs.title">{copy.whyUs.title}</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-br from-accent-subtle to-white p-8 rounded-2xl border-2 border-[#F97316]/30">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center shadow-sm">
+              <span class="text-white font-bold">M</span>
+            </div>
+            <span class="font-bold text-[#0F172A] text-xl" data-copy-key="whyUs.us.title">{copy.whyUs.us.title}</span>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span class="text-[#475569]" data-copy-key="whyUs.us.item1">{copy.whyUs.us.item1}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span class="text-[#475569]" data-copy-key="whyUs.us.item2">{copy.whyUs.us.item2}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span class="text-[#475569]" data-copy-key="whyUs.us.item3">{copy.whyUs.us.item3}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span class="text-[#475569]" data-copy-key="whyUs.us.item4">{copy.whyUs.us.item4}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-slate-300 rounded-lg flex items-center justify-center">
+              <span class="text-slate-500 font-bold">?</span>
+            </div>
+            <span class="font-bold text-slate-400 text-xl" data-copy-key="whyUs.them.title">{copy.whyUs.them.title}</span>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span class="text-slate-500" data-copy-key="whyUs.them.item1">{copy.whyUs.them.item1}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span class="text-slate-500" data-copy-key="whyUs.them.item2">{copy.whyUs.them.item2}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span class="text-slate-500" data-copy-key="whyUs.them.item3">{copy.whyUs.them.item3}</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span class="text-slate-500" data-copy-key="whyUs.them.item4">{copy.whyUs.them.item4}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools We Use -->
+  <section id="tools" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3" data-copy-key="tools.label">{copy.tools.label}</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+          <span data-copy-key="tools.title">{copy.tools.title}</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Row 1: Clay > Sales Nav > Apollo > Prospeo -->
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/clay.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.clay.name">{copy.tools.clay.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.clay.tag">{copy.tools.clay.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/salesnavigator.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.salesNavigator.name">{copy.tools.salesNavigator.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.salesNavigator.tag">{copy.tools.salesNavigator.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/apollo.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.apollo.name">{copy.tools.apollo.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.apollo.tag">{copy.tools.apollo.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/prospeo.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.prospeo.name">{copy.tools.prospeo.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.prospeo.tag">{copy.tools.prospeo.tag}</span>
+        </div>
+        <!-- Row 2: Smartlead > Instantly > Heyreach > HubSpot -->
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/smartlead.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.smartlead.name">{copy.tools.smartlead.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.smartlead.tag">{copy.tools.smartlead.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/instantly.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.instantly.name">{copy.tools.instantly.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.instantly.tag">{copy.tools.instantly.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/heyreach.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.heyreach.name">{copy.tools.heyreach.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.heyreach.tag">{copy.tools.heyreach.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/hubspot.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.hubspot.name">{copy.tools.hubspot.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.hubspot.tag">{copy.tools.hubspot.tag}</span>
+        </div>
+        <!-- Row 3: Cursor > Claude Code > N8N > Apify -->
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/cursor.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.cursor.name">{copy.tools.cursor.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.cursor.tag">{copy.tools.cursor.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/claude.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.claude.name">{copy.tools.claude.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.claude.tag">{copy.tools.claude.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/n8n.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.n8n.name">{copy.tools.n8n.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.n8n.tag">{copy.tools.n8n.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/apify.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="tools.apify.name">{copy.tools.apify.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="tools.apify.tag">{copy.tools.apify.tag}</span>
+        </div>
+      </div>
+
+      <!-- AI & LLMs subsection -->
+      <h3 class="text-lg font-semibold text-[#0F172A] mt-16 mb-6 text-center" data-copy-key="llms.label">{copy.llms.label}</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/openai.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="llms.openai.name">{copy.llms.openai.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="llms.openai.tag">{copy.llms.openai.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/claude.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="llms.claude.name">{copy.llms.claude.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="llms.claude.tag">{copy.llms.claude.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/gemini.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="llms.gemini.name">{copy.llms.gemini.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="llms.gemini.tag">{copy.llms.gemini.tag}</span>
+        </div>
+        <div class="group flex flex-col items-center p-6 bg-slate-50 rounded-xl border border-slate-200 hover:bg-white hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3 overflow-hidden bg-white border border-slate-200 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+            <img src="/logos/perplexity.png" alt="" class="w-8 h-8 object-contain" width="32" height="32" />
+          </div>
+          <span class="font-medium text-[#0F172A]" data-copy-key="llms.perplexity.name">{copy.llms.perplexity.name}</span>
+          <span class="text-xs text-[#475569]" data-copy-key="llms.perplexity.tag">{copy.llms.perplexity.tag}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-offwhite">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3" data-copy-key="faq.label">{copy.faq.label}</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0F172A]">
+          <span data-copy-key="faq.title">{copy.faq.title}</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-[#0F172A] hover:bg-slate-50">
+            <span data-copy-key="faq.q1">{copy.faq.q1}</span>
+            <svg class="w-5 h-5 text-accent group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="px-6 pb-6 text-[#475569]"><span data-copy-key="faq.a1">{copy.faq.a1}</span></p>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-[#0F172A] hover:bg-slate-50">
+            <span data-copy-key="faq.q2">{copy.faq.q2}</span>
+            <svg class="w-5 h-5 text-accent group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="px-6 pb-6 text-[#475569]"><span data-copy-key="faq.a2">{copy.faq.a2}</span></p>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-[#0F172A] hover:bg-slate-50">
+            <span data-copy-key="faq.q3">{copy.faq.q3}</span>
+            <svg class="w-5 h-5 text-accent group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="px-6 pb-6 text-[#475569]"><span data-copy-key="faq.a3">{copy.faq.a3}</span></p>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-[#0F172A] hover:bg-slate-50">
+            <span data-copy-key="faq.q4">{copy.faq.q4}</span>
+            <svg class="w-5 h-5 text-accent group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="px-6 pb-6 text-[#475569]"><span data-copy-key="faq.a4">{copy.faq.a4}</span></p>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-[#0F172A] hover:bg-slate-50">
+            <span data-copy-key="faq.q5">{copy.faq.q5}</span>
+            <svg class="w-5 h-5 text-accent group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="px-6 pb-6 text-[#475569]"><span data-copy-key="faq.a5">{copy.faq.a5}</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="relative py-24 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-64 h-64 bg-accent rounded-full blur-[100px] opacity-20"></div>
+    <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-[#F59E0B] rounded-full blur-[100px] opacity-10"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        <span data-copy-key="finalCta.title">{copy.finalCta.title}</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+        <span data-copy-key="finalCta.subtitle">{copy.finalCta.subtitle}</span>
+      </p>
+      <a 
+        href="/contact" 
+        class="inline-flex items-center bg-accent text-white px-10 py-5 rounded-xl text-lg font-semibold hover:bg-accent-hover transition-all hover:scale-105 shadow-xl shadow-accent/25"
+        data-copy-key="finalCta.button"
+      >
+        {copy.finalCta.button}
+        <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

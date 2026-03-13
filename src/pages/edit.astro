@@ -1,0 +1,18 @@
+---
+// Simple URL for edit mode: /edit -> /?edit=1
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0;url=/?edit=1" />
+    <title>Edit mode - MagmaLink</title>
+    <script is:inline>
+      window.location.replace('/?edit=1');
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to edit mode… <a href="/?edit=1">Click here if you’re not redirected.</a></p>
+  </body>
+</html>
